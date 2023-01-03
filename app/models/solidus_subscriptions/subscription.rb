@@ -373,7 +373,7 @@ module SolidusSubscriptions
 
     def set_payment_method
       if payment_source
-        self.payment_method = payment_source.payment_method
+        self.payment_method = payment_source
       end
     end
 

@@ -16,7 +16,7 @@ module SolidusSubscriptions
         def self.prepended(base)
           base.after_action(
             :handle_subscription_line_items,
-            only: :populate,
+            only: :create,
             if: ->{ params[:subscription_line_item] }
           )
         end
@@ -31,5 +31,4 @@ module SolidusSubscriptions
     end
   end
 end
-
-Spree::OrdersController.prepend(SolidusSubscriptions::Spree::OrdersController::CreateSubscriptionLineItems)
+CartLineItemsController.prepend(SolidusSubscriptions::Spree::OrdersController::CreateSubscriptionLineItems)

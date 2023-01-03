@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Deface::Override.new(
-  virtual_path: "spree/products/_cart_form",
+  virtual_path: "cart_line_items/_product_submit",
   name: "subscription_line_item_fields",
-  insert_after: "[data-hook='inside_product_cart_form']",
+  insert_after: "[class='product-submit']",
   partial: "spree/frontend/products/subscription_line_item_fields"
 )
